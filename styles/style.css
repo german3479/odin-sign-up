@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+.btn {
+    background: #596d48;
+    color: white;
+    border-radius: 5px;
+    padding: .8rem 1.6rem;
+    width: 170px;
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    column-gap: .75rem;
+    height: 100vh;
+}
+
+#img-bkg {
+    width: 35vw;
+    max-width: 100%;
+    align-self: center;
+    position: relative;
+    background-image: url("../public/imgs/beach-new.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* margin-left: -8px;
+    margin-top: -14px; */
+    overflow: hidden;
+}
+#img-bkg img{
+    width: 100%;
+    height: 100%;
+}
+#img-bkg .logo-background {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    background: rgba(100,100,100,0.6);
+}
+#logo-container {
+
+}
+#logo-container img {
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    padding: 1.75rem;
+    /* border: 1.2px solid black; */
+}
+.container > * {
+    /* border: 1.2px solid green; */
+}
+.container:nth-child(odd){
+    background: silver;
+}
+.container:nth-child(even){
+    background: gold;
+}
+#form-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.form-group {
+    display: flex;
+    gap: 55px;
+}
+input {
+    border: 1px solid #e5e7eb;
+    padding: 1.5px 3px;
+    /* box-shadow: 0 1px 2px rgba(0,0,0,0.1); */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus {
+    border-color: blue;
+    box-shadow: 0 0 4px rgba(0,0,256,0.3);
+}
+.create-account {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    gap: 1.8rem;
+}
