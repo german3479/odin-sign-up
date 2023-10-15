@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up form</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./script.js" defer></script>\
 </head>
 <body>
     <div id="img-bkg">
-       <div class="logo-background"></div>
-       <div id="logo-container">
-        <img src="./public/imgs/logo.jpg" alt="logo" />
+       <div class="logo-background">
+        <div id="logo-container">
+            <img src="./public/imgs/odin-lined.png" alt="logo" />
+            <span>LOGOTEXT</span>
+        </div>
        </div>
     </div>
     <main>
@@ -22,45 +25,45 @@
             </div>
         </div>
         <div class="container">
-            <div id="form-content">
+            <form id="form-content" id="signupForm" action="" method="get">
                 <p><strong>Let's do this!</strong></p><br/>
                 <div id="form-groups">
                     <div class="form-group">
                         <div class="form-input">
                             <label for="firstName">FIRST NAME</label><br/>
-                            <input type="text" id="firstName" />
+                            <input type="text" id="firstName" required/>
                         </div>
                         <div class="form-input">
                             <label for="lastName">LAST NAME</label><br/>
-                            <input type="text" id="lastName" />
+                            <input type="text" id="lastName" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-input">
                             <label for="userEmail">EMAIL</label><br/>
-                            <input type="email" id="userEmail" />
+                            <input type="email" id="userEmail" required/>
                         </div>
                         <div class="form-input">
                             <label for="phone">PHONE NUMBER</label><br/>
-                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" placeholder="123-456-7890" />
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" placeholder="123-456-7890" required/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="form-input">
+                        <div class="form-input pw-input">
                             <label for="password">PASSWORD</label><br/>
-                            <input type="password" id="password" />
+                            <input type="password" id="password" data-status="valid" required/>
                         </div>
-                        <div class="form-input">
+                        <div class="form-input pw-input">
                             <label for="confPassword">CONFIRM PASSWORD</label><br/>
-                            <input type="password" id="confPassword" />
+                            <input type="password" id="confPassword" data-status="valid" required/>
                         </div>
                     </div>
                 </div>
-            </div>
+                <button type="submit" class="btn">Create account</button>
+            </form>
         </div>
         <div class="container">
             <div class="create-account">
-                <button type="submit" class="btn">Create account</button>
                 <p>Already have an account? <a href="#">Log in</a></p>
             </div>
         </div>

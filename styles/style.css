@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +20,13 @@ a {
 
 body {
     display: flex;
-    column-gap: .75rem;
+    /* column-gap: .75rem; */
     height: 100vh;
+    background: black;
 }
 
 #img-bkg {
+    display: block;
     width: 35vw;
     max-width: 100%;
     align-self: center;
@@ -31,8 +35,6 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    /* margin-left: -8px;
-    margin-top: -14px; */
     overflow: hidden;
 }
 #img-bkg img{
@@ -40,6 +42,8 @@ body {
     height: 100%;
 }
 #img-bkg .logo-background {
+    display: flex;
+    justify-content: center;
     height: 80px;
     width: 100%;
     position: absolute;
@@ -47,24 +51,27 @@ body {
     background: rgba(100,100,100,0.6);
 }
 #logo-container {
-
+    display: flex;
+    font-family: "Shadows Into Light";
+    text-transform: uppercase;
+    color: #eee;
+    font-size: 1.6rem;
 }
-#logo-container img {
-
+#logo-container span {
+    display: flex;
+    align-items: center;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    min-height: 100vh;
+    justify-content: space-between;
 }
 .container {
     padding: 1.75rem;
-    /* border: 1.2px solid black; */
+    flex-grow: 1;
 }
 .container > * {
-    /* border: 1.2px solid green; */
 }
 .container:nth-child(odd){
     background: silver;
@@ -84,16 +91,34 @@ main {
 input {
     border: 1px solid #e5e7eb;
     padding: 1.5px 3px;
-    /* box-shadow: 0 1px 2px rgba(0,0,0,0.1); */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 input:focus {
-    border-color: blue;
-    box-shadow: 0 0 4px rgba(0,0,256,0.3);
+    border: 3px solid blue;
+    box-shadow: 0 0 4px rgba(0,0,255,0.3);
+    outline: none;
+}
+input[data-status="error"] {
+    border: 3px solid red;
+}
+input[data-status="valid"]:focus {
+    border: 3px solid green;
+}
+
+#form-content button[type="submit"]{
+    margin-top: 1.35rem;
 }
 .create-account {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     gap: 1.8rem;
+}
+
+@media (max-width: 1100px){
+    #img-bkg {
+        display: none;
+    }
+    .container {
+        padding: 0;
+    }
 }
