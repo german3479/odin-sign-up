@@ -134,6 +134,9 @@ input:focus {
         display: flex;
         justify-content: center;
     }
+    #img-bkg {
+        width: 100%;
+    }
     .form-group {
         flex-direction: column;
     }
@@ -145,7 +148,6 @@ input:focus {
     }
     #img-bkg {
         width: 100%;
-        display: contain;
     }
     .container {
         padding: 0;
