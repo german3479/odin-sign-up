@@ -98,11 +98,26 @@ input:focus {
     box-shadow: 0 0 4px rgba(0,0,255,0.3);
     outline: none;
 }
-input[data-status="error"] {
+.error {
     border: 3px solid red;
 }
-input[data-status="valid"]:focus {
+/* input[data-status="error"] {
+    border: 3px solid red;
+} */
+.valid:focus {
+    border: 3px solid orange;
+}
+/* input[data-status="valid"]:focus {
     border: 3px solid green;
+} */
+#passwordMsg {
+    display: none;
+}
+#passwordMsg.visible {
+    display: block;
+    color: red;
+    margin-top: 0.3rem;
+    font-size: 14px;
 }
 
 #form-content button[type="submit"]{
@@ -114,9 +129,22 @@ input[data-status="valid"]:focus {
     gap: 1.8rem;
 }
 
+@media (max-width: 450px) {
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    .form-group {
+        flex-direction: column;
+    }
+}
 @media (max-width: 1100px){
+    body {
+        display: flex;
+        flex-direction: column;
+    }
     #img-bkg {
-        display: none;
+        width: 100vw;
     }
     .container {
         padding: 0;

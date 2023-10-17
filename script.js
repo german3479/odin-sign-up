@@ -1,11 +1,18 @@
-const passwordInputs = document.querySelectorAll("[data-status]");
+const passwordInputs = document.querySelectorAll(".pw-input > input");
 const myForm = document.querySelector("#form-content");
+const passwordMsg = document.querySelector("#passwordMsg");
 
 let pwInpArr = Array.from(passwordInputs);
 
 pwInpArr.forEach(inp => {
     inp.addEventListener('input', (e)=>{
-        let rest = pwInpArr.filter(item => item !== e.target)
+        const matches = pwInpArr.every(val => val.value === pwInpArr[0].value);
+
+        if (!matches){
+            passwordMsg.classList.add('visible');
+        } else {
+            passwordMsg.classList.remove('visible');
+        }
     })
 })
 
@@ -17,10 +24,8 @@ myForm.addEventListener('submit', e =>{
     })
     
     if (!matches){
-        pwInpArr[pwInpArr.length - 1].setCustomValidity('passwords must match');
-        pwInpArr.forEach(input => input.dataset.status = "error");
+        passwordMsg.classList.add('visible');
     } else {
-        pwInpArr[pwInpArr.length - 1].setCustomValidity('');
-        pwInpArr.forEach(input => input.dataset.status = "valid");
+        passwordMsg.classList.remove('visible');
     }
 })
